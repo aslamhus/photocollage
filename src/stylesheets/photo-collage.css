@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+}
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  min-width: 540px;
+  min-height: 540px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  text-align: center;
+  display: none;
+}
+#instagram-post {
+  resize: both;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  width: calc(500px * 1.5);
+  height: calc(500px * 1.5);
+  border: 2px solid dodgerblue;
+  margin: 1rem;
+  /* Rows */
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  --cell-padding: 0px;
+  --row-padding: 0px;
+}
+#instagram-post.square {
+  width: calc(500px * 1.5);
+  height: calc(500px * 1.5);
+}
+#instagram-post.portrait {
+  width: calc(400px * 1.5);
+  height: calc(500px * 1.5);
+}
+#instagram-post .row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
+  padding: var(--row-padding);
+}
+#instagram-post .cell {
+  position: relative;
+  border: none;
+  height: 100%;
+  width: auto;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-grow: 1;
+  margin: var(--cell-padding);
+}
+#instagram-post img {
+  /* max-width:100%; */
+  width: 100%;
+  height: 100%;
+}
+#instagram-post.rulers .cell {
+  border: 1px dotted palevioletred;
+}
+#instagram-post.rulers .row {
+  border: 1px dotted turquoise;
+}
+/* Grid Options */
+.grid-options {
+  text-align: center;
+}
+.grid-options.right,
+.grid-options.left {
+  width: 200px;
+}
+
+form > div {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+form .form-group {
+  margin: 1rem;
+}
+/* Hidden */
+.hidden {
+  display: none;
+}
+/* icons */
+button {
+  color: dodgerblue;
+  border: none;
+  background: transparent;
+}
+button:active div {
+  color: white;
+  background: dodgerblue;
+  transform: translateY(1px);
+}
+button i {
+  font-size: 2rem;
+  color: inherit;
+}
+button#square div,
+button#portrait div {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  border: 1px solid dodgerblue;
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+}
+
+button#portrait div {
+  width: 4rem;
+  height: 5rem;
+}
+/* Modal */
+.modal .modal-dialog-centered {
+  max-width: 90vw !important;
+}
+.modal .modal-body {
+  background: rgb(228, 228, 228);
+}
+.modal.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Canvas */
+canvas {
+  border: 1px solid gray;
+  background: white;
+  margin: 3rem auto;
+  display: block;
+}

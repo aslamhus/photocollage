@@ -1,0 +1,23 @@
+{
+  "name": "photocollage",
+  "version": "1.0.0",
+  "description": "A javascript based app for building image collages",
+  "main": "photo-collage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "open -a 'Safari' http://localhost:8888/local_folder/@aslamhus/PhotoCollage/src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aslamhus/photocollage.git"
+  },
+  "author": "Aslam Husain <aslam.percy.husain@gmail.com> (https://github.com/aslamhus)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aslamhus/photocollage/issues"
+  },
+  "homepage": "https://github.com/aslamhus/photocollage#readme",
+  "dependencies": {
+    "@aslamhus/fileselect": "^2.2.1"
+  }
+}

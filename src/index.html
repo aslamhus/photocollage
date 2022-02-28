@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/88e0de7c9a.js" crossorigin="anonymous"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./stylesheets/photo-collage.css" />
+  </head>
+
+  <body>
+    <main>
+      <div class="d-flex flex-row justify-content-center align-items-center align-content-center">
+        <div class="grid-options left hidden">
+          <div class="form-group">
+            <button id="square">
+              Square
+              <div><i class="fas fa-user"></i></div>
+            </button>
+          </div>
+          <div class="form-group">
+            <button id="portrait">
+              8 x 10
+              <div><i class="fas fa-user"></i></div>
+            </button>
+          </div>
+        </div>
+        <div id="instagram-post"></div>
+        <div class="grid-options right hidden">
+          <div class="form-group">
+            <input type="checkbox" id="rulers-toggle" name="rulers-toggle" />
+            <label for="rulers-toggle">Toggle rulers</label>
+            <i class="fas fa-ruler-combined"></i>
+          </div>
+          <div class="form-group">
+            <input type="radio" name="object-fit" value="contain" />
+            <label for="object-fit">Contain</label>
+            <input type="radio" name="object-fit" value="cover" />
+            <label for="object-fit">Cover</label>
+          </div>
+          <div class="form-group">
+            <label for="background-position">Image position</label>
+            <input
+              type="text"
+              name="background-position"
+              id="background-position"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="m-3">
+        <button type="button" id="select-logos" class="btn btn-primary">Select images</button>
+        <button type="button" id="save-image" class="btn btn-primary">Save Image</button>
+      </div>
+      <div class="grid-options bottom hidden">
+        <div id="number-of-photos"></div>
+        <form>
+          <div>
+            <div class="form-group">
+              <label for="range-rows">Rows</label>
+              <input
+                type="range"
+                name="range-rows"
+                class="form-control-range"
+                id="range-rows"
+                min="1"
+              />
+            </div>
+            <div class="form-group">
+              <label for="range-columns">Columns</label>
+              <input
+                type="range"
+                name="range-columns"
+                class="form-control-range"
+                id="range-columns"
+                min="1"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="form-group">
+              <label for="row-padding">Row padding</label>
+              <input
+                type="range"
+                name="row-padding"
+                class="form-control-range"
+                id="row-padding"
+                min="0"
+                max="20"
+              />
+            </div>
+            <div class="form-group">
+              <label for="cell-padding">Cell padding</label>
+              <input
+                type="range"
+                name="cell-padding"
+                class="form-control-range"
+                id="cell-padding"
+                min="0"
+                max="20"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <div id="spinner">
+      <div class="spinner-border text-primary" style="width: 3em; height: 3em" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <p class="text-primary mt-3">Building your instagram post...</p>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="canvasModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="canvasModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Saved canvas</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            <button type="button" id="confirm-save" class="btn btn-primary">
+              Download <i class="fas fa-download"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./js/photo-collage.js"></script>
+</html>
